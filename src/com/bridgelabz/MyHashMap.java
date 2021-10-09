@@ -3,7 +3,7 @@ package com.bridgelabz;
 /**
  * Purpose - To create methods for Hash table features.
  */
-public class MyHashTable <K, V> {
+public class MyHashMap<K, V> {
     MyMapNode head;
     MyMapNode tail;
 
