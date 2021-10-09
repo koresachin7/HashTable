@@ -1,6 +1,6 @@
 package com.bridgelabz;
 
-public class MyMapNode <K,V> {
+public class MyMapNode <K,V>{
     K key;
     V value;
     MyMapNode<K, V> next;

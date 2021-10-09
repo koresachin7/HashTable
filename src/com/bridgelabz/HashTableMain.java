@@ -6,24 +6,49 @@ package com.bridgelabz;
  */
 
 public class HashTableMain {
-    public static void main(String[] args) {
-        MyHashMap<String, Integer> hashTable = new MyHashMap();
-        String sentence = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
+    public class MyMapNode<K, V> {
+        K key;
+        V value;
+        MyMapNode<K, V> next;
 
-        // Storing given sentence in an array.
-        // Converting the sentence to lower case and removing spaces.
-        String[] sentenceArray = sentence.toLowerCase().split(" ");
-
-        // Iterating over the array.
-        for (String word : sentenceArray) {
-            Integer count = hashTable.get(word);
-
-            if (count == null)
-                count = 1;
-            else
-                count = count + 1;
-            hashTable.add(word, count);
+        public MyMapNode(K key, V value) {
+            this.key = key;
+            this.value = value;
+            next = null;
         }
-        System.out.println(hashTable);
+
+        public K getKey() {
+            return key;
+        }
+
+        public void setKey(K key) {
+            this.key = key;
+
+        }
+
+        public V getValue() {
+            return value;
+        }
+
+        public void setValue(V value) {
+            this.value = value;
+        }
+
+        public MyMapNode<K, V> getNext() {
+            return next;
+        }
+
+        public void setNext(MyMapNode<K, V> next) {
+            this.next = (MyMapNode<K, V>) next;
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder nodeString = new StringBuilder();
+            nodeString.append("MyMapNode{" + " Key= ").append(key).append(" Value= ").append(value).append('}');
+            if (next != null)
+                nodeString.append("->").append(next);
+            return nodeString.toString();
+        }
     }
 }
